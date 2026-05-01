@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PCAT Projesi</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <h1>PCAT Fotoğraf Galerisi</h1>
+    
+    <form action="/fotograf-ekle" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Fotoğraf Başlığı Girin" required>
+        <input type="text" name="description" placeholder="Açıklama Girin" required>
+        
+        <input type="file" name="image" accept="image/*" required style="border: none; padding: 10px 0;">
+        
+        <button type="submit">Fotoğrafı Ekle</button>
+    </form>
+    <h2>Yüklenen Fotoğraflar</h2>
+
+   <% photos.forEach(function(photo) { %>
+        <div class="photo-card" style="display: flex; gap: 15px; align-items: center;">
+            
+            <img src="<%= photo.image %>" alt="<%= photo.title %>" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
+            
+            <div>
+                <h3><%= photo.title %></h3>
+                <p><%= photo.description %></p>
+                <a href="/fotograflar/<%= photo._id %>">Detaylara Git &rarr;</a>
+            </div>
+        </div>
+    <% }) %>
+
+</body>
+</html>

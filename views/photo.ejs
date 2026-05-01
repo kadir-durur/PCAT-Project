@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= photo.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <a href="/" class="back-link">&larr; Ana Sayfaya Dön</a>
+
+   <div class="detail-container" style="text-align: center;">
+        <h1><%= photo.title %></h1>
+        
+        <img src="<%= photo.image %>" alt="<%= photo.title %>" style="max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">
+        
+        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+        <p style="text-align: left;"><b>Detaylı Açıklama:</b> <%= photo.description %></p>
+        </div>
+
+</body>
+</html>
